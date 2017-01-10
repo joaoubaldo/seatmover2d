@@ -7,11 +7,8 @@ before_install:
   - tar xf arduino-1.6.5-linux64.tar.xz
   - sudo mv arduino-1.6.5 /usr/local/share/arduino
   - sudo ln -s /usr/local/share/arduino/arduino /usr/local/bin/arduino
-  - mkdir /usr/local/share/arduino/libraries/firmware
-install:
-  - ln -s firmware.ino /usr/local/share/arduino/libraries/firmware/
 script:
-  - arduino --verify --board arduino:avr:uno $PWD/libraries/firmware/firmware.ino
+  - arduino --verify --board arduino:avr:uno joaoubaldo/seatmover2d/firmware/firmware.ino
 notifications:
   email:
     on_success: change
